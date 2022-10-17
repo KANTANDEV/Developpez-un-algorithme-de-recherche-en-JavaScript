@@ -15,13 +15,8 @@ try {
 	const response = await fetch('./data/recipes.json')
 	data = await response.json()
 	searchRecipes()
-	searchbar.onkeydown = (event) => {
-		if (event.code !== 'Enter' && event.code !== 'NumpadEnter') {
-			return
-		}
-		searchRecipes()
-	}
-	searchicon.onclick = searchRecipes
+	//on ajoute un evenement qui lance la recherche a chaque fois que l'utilisateur tape dans la barre de recherche
+	searchbar.addEventListener('input', searchRecipes)
 	for (let child of filters.children) {
 		for (let filter of child.children) {
 			if (filter.id.includes('input')) {
