@@ -247,3 +247,15 @@ header > div:first-child > h1 > img {
 	text-overflow: ellipsis;
 	overflow: hidden;
 }
+
+@media screen and (max-width: 768px) {
+	#recipes {
+		grid-template-columns: unset;
+	}
+
+	#filters {
+		flex-direction: column;
+		gap: 20px;
+	}
+
+}
